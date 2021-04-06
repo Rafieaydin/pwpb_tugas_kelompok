@@ -14,10 +14,12 @@ class SiswaSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('siswa')->insert([
-            'nama' => 'dana',
-            'kelas' => 'XI',
-            'absen' => 1,
-        ]);
+        for ($i=1; $i <= 20 ; $i++) {
+            DB::table('siswa')->insert([
+                'nama' => 'dana' .$i,
+                'kelas' => 'XI',
+                'absen' => $i,
+            ]);
+        }
     }
 }

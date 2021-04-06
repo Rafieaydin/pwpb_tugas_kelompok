@@ -18,6 +18,7 @@ class CreateSiswaTable extends Migration
             $table->string('nama');
             $table->string('kelas');
             $table->integer('absen');
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
     }

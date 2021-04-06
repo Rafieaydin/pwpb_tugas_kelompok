@@ -17,8 +17,7 @@
 <h1 class="text-center mt-5">Eloquent laravel</h1>
 
 <div class="container">
-    <a href="/siswa/create" class="btn btn-primary mt-4 mb-2">Tambah Data</a>
-    <a href="/siswa/softdelete" class="btn btn-danger mt-4 mb-2">History hapus</a>
+    <a href="/siswa" class="btn btn-primary mt-4 mb-2">kembali</a>
     <table class="table table-bordered border-dark">
         <thead>
             <tr>
@@ -26,37 +25,18 @@
                 <th scope="col">Nama</th>
                 <th scope="col">kelas</th>
                 <th scope="col">absen</th>
-                <th scope="col">action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($siswa as $siswas)
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $siswas->nama }}</td>
-                    <td>{{ $siswas->kelas }}</td>
-                    <td>{{ $siswas->absen }}</td>
-                    <td>
-                        <a href="/siswa/detail/{{ $siswas->id }}" class="btn btn-primary">Detail</a>
-                        <a href="/siswa/edit/{{ $siswas->id }}" class="btn btn-success">Update</a>
-                        <form action="/siswa/delete/{{ $siswas->id }}" class="d-inline" method="post">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-danger ">hapus</button>
-                        </form>
-                    </td>
+                    <td>{{ $siswa->id }}</td>
+                    <td>{{ $siswa->nama }}</td>
+                    <td>{{ $siswa->kelas }}</td>
+                    <td>{{ $siswa->absen }}</td>
                 </tr>
-            @endforeach
         </tbody>
     </table>
-    <div class="row">
-        <div class="col-md-3  ms-auto">
-            {{ $siswa->links() }}
-        </div>
     </div>
-
-    </div>
-
 
 
     <!-- Optional JavaScript; choose one of the two! -->
